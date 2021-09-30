@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list>
+    <ion-list-header>
+      Users from JPH
+    </ion-list-header>
+    <!---->
+    <!--    <ion-item *ngFor="let u of users">-->
+    <!--      <ion-avatar slot="start">-->
+    <!--        <img src="https://owu.com.ua/image/logo/webp/Blue-Big-Bird-Final-Logo.webp" alt="user logo">-->
+    <!--      </ion-avatar>-->
+    <!--      <ion-label>-->
+    <!--        <h2>{{u.name}}</h2>-->
+    <!--        <h3>{{u.username}}</h3>-->
+    <!--        <p>{{u | json}}</p>-->
+    <!--      </ion-label>-->
+    <!--    </ion-item>-->
+    <!---->
+
+    <ion-item-sliding *ngFor="let u of users">
+      <ion-item-options side="start">
+        <ion-item-option (click)="details(u)">
+          details
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item *ngFor="let u of users">
+        <ion-avatar slot="start">
+          <img src="https://owu.com.ua/image/logo/webp/Blue-Big-Bird-Final-Logo.webp" alt="user logo">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{u.name}}
+            <ion-icon name="add-circle"></ion-icon>
+          </h2>
+          <h3>{{u.username}}</h3>
+          <p>{{u | json}}</p>
+        </ion-label>
+      </ion-item>
+
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
